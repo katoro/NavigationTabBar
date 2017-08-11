@@ -1078,6 +1078,8 @@ public class NavigationTabBar extends View implements ViewPager.OnPageChangeList
         // Get height of NTB with badge on nor
         final int mBadgedHeight = (int) (mBounds.height() + mBadgeMargin);
 
+        if(mBadgedHeight==0)
+            return;
         // Set main canvas
         if (mBitmap == null || mBitmap.isRecycled()) {
             mBitmap = Bitmap.createBitmap(
