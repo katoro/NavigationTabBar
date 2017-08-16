@@ -1016,7 +1016,11 @@ public class NavigationTabBar extends View implements ViewPager.OnPageChangeList
             if (mModelTitleSize == AUTO_SIZE) mModelTitleSize = side * TITLE_SIZE_FRACTION;
             mTitleMargin = side * TITLE_MARGIN_FRACTION;
         }
-
+        
+        // katoro add , if(0>mIconSize)
+        if(mIconSizeFraction < 0 && mIconSizeFraction != AUTO_SCALE) 
+            mIconSize = 0;
+        
         // Set bounds for NTB
         mBounds.set(0.0F, 0.0F, width, height - mBadgeMargin);
 
